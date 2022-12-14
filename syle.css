@@ -1,0 +1,41 @@
+/* Algerya font style link */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700;800&display=swap');
+
+/* root specs */
+:root {
+  font-size: 62.5%;
+  --coldark: #161515;
+  --colblack: #000000;
+  --collight: rgb(189, 185, 185);
+  --colwhite: rgb(255, 255, 255);
+  --colmedium: rgba(43, 78, 69, 0.9);
+  --colcontrast: rgb(180, 134, 8);
+  --text-margin: 1.5rem 0;
+  --button-padding: 0.3rem 1rem;
+  --regular-radius: 0.5rem;
+  --card-shadow: 0px 1px 2px 0px rgba(0, 255, 255, 0.7),
+    1px 2px 4px 0px rgba(243, 223, 204, 0.4),
+    2px 4px 8px 0px rgba(243, 223, 204, 0.4),
+    2px 4px 16px 0px rgba(105, 104, 39, 0.4);
+}
+
+/* apply to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(rgba(43, 78, 69, 0.9), rgba(41, 80, 61, 0.9)), url(./images/birds.jpg);
+  background-position: 90% 80%;
+  background-size: cover;
+  color: var(--collight);
+  font-family: 'Alegreya', serif;
+  ;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
