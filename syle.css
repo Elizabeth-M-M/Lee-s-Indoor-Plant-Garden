@@ -6,10 +6,13 @@
   font-size: 62.5%;
   --coldark: #161515;
   --colblack: #000000;
-  --collight: rgb(189, 185, 185);
+  --collight: rgb(177, 171, 125);
+  --colmellow: rgb(206, 201, 163);
+  --colmellowGradient: rgba(206, 201, 163, 0.6);
+  --colwhiteGradient: rgba(255, 255, 255, 0.5);
   --colwhite: rgb(255, 255, 255);
   --colmedium: rgba(43, 78, 69, 0.9);
-  --colcontrast: rgb(180, 134, 8);
+  --colcontrast: rgb(255, 187, 0);
   --text-margin: 1.5rem 0;
   --button-padding: 0.3rem 1rem;
   --regular-radius: 0.5rem;
@@ -29,13 +32,292 @@
 body {
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(rgba(43, 78, 69, 0.9), rgba(41, 80, 61, 0.9)), url(./images/birds.jpg);
-  background-position: 90% 80%;
-  background-size: cover;
-  color: var(--collight);
+  background: var(--colmellow);
+  color: var(--coldark);
   font-family: 'Alegreya', serif;
-  ;
   font-size: 1.6rem;
   line-height: 1.6;
   text-align: center;
+}
+header{
+  width: 100%;
+  max-height: 100vh;
+  background-color: var(--colmedium);
+  position: relative;
+}
+.header-width-position{
+  width: 80%;
+  height: 100%;
+  background-color: var(--collight);
+  margin: auto;  
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 40%;
+  
+}
+.header-content{
+  flex-basis: 50%;
+  align-self: stretch;
+  justify-self: start;
+  display: flex;
+  align-items: stretch;
+  
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2rem;
+
+}
+.header-content img{
+  width: 10rem;
+}
+.header-content-main{
+  text-align: left;
+  
+}
+.social{
+  align-self: start;
+}
+.social ul{
+  display: flex;
+  justify-content: space-between;
+}
+.social ul li{
+list-style: none;
+display: inline-block;
+margin: 1rem;
+}
+.social ul li a{
+color: var(--coldark);
+}
+.header-img{
+  flex-basis: 50%;
+}
+.header-img img{
+  width: 100%;
+ 
+}
+.intro{
+ 
+  font-size: 3rem;
+  line-height: 1.2;
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(177, 171, 125, 0.4)), url(./Images/cacti-pots.png);
+}
+.intro H1{
+  padding: 5rem;
+}
+.most-liked{
+  background-color: var(--colmedium);
+  padding: 2rem 0;
+  
+
+}
+.most-liked-width{
+  width: 80%;
+  margin:2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.most-liked-card{
+  width: 40%;
+  max-width: 30rem;
+  height: 30rem;
+  background-color: var(--colmellowGradient);
+  border-radius: var(--regular-radius);
+  margin: 1rem;
+
+}
+.most-liked-card img{
+  width: 100%;
+  height: 80%;
+}
+.btn-dark.btn{
+background-color: var(--collight);
+color: var(--coldark);
+}
+
+
+.container-card-holder{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+ 
+  margin: 1rem;
+}
+.container-card{
+  width: 40%;
+  max-width: 30rem;
+  height: 30rem;
+  background-color: var(--colmellowGradient);
+  border-radius: var(--regular-radius);
+  margin: 1rem;
+  overflow: hidden;
+  background-color: var(--colwhiteGradient);
+}
+
+.container-card img {
+  width: 100%;
+  height: 70%;
+}
+.container-card-holder.withoutDits {
+  width: 40%;
+  max-width: 30rem;
+  height: 30rem;
+}
+
+.container-card.withoutDits {
+  width: 100%;
+  height: 100%;
+}
+.container-card-details {
+
+  background-color: var(--colmedium);
+  color: var(--collight);
+  padding: 2rem;
+  border-radius: var(--regular-radius);
+  text-align: left;
+  text-transform: capitalize;
+  width: 60%;
+  font-size: 1.5rem;
+}
+
+.invisible {
+  display: none;
+}
+
+
+
+.container-card-details h4 {
+  font-size: 1.5rem;
+}
+
+
+.other-plants-intro{
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+.btn{
+  padding: var(--button-padding);
+  border: none;
+  background-color: var(--colmedium);
+  font-size: 1.5rem;
+  color: var(--colwhite);
+  font-weight: 600;
+  border-radius: var(--regular-radius);
+  margin: 2rem 1rem;
+  cursor: pointer;
+}
+.footer{
+background-color: var(--colmedium);
+color:var(--collight);
+}
+.footer-width{
+  width: 80%;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* to display block,  
+remove invisible class to card-details
+remove withoutDits in .container-card-holder
+.container-card
+
+to display normal
+add invisible card-details class:display:none;
+.container-card-holder.withoutDits
+.container-card.withoutDits
+*/
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border-radius: 1rem;
+  background-color: var(--colmedium);
+  color: var(--colwhite);
+  width: 50%;
+  height: auto;
+  z-index: 10;
+  padding: 2rem;
+  font-size: 1.8rem;
+  text-align: left;
+  box-shadow:var(--card-shadow);
+}
+
+.modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+}
+.modal-header h3{
+  font-size: 3rem;
+}
+.modal-header h3 span{
+  color: var(--colcontrast);
+}
+#closeModal {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--colcontrast);
+}
+#closeModal:hover{
+  color: var(--colwhite);
+}
+#overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .8);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  pointer-events: none;
+
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+form div{
+  margin:1rem 0;
+}
+.width input{
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border: none;
+}
+.modal .btn{
+  width: 50%;
+  transform: translateX(50%);
+  background-color: var(--colcontrast);
+  color: var(--coldark);
+  transition: .3s;
+}
+.modal .btn:hover {
+    background-color: var(--coldark);
+  color: var(--colwhite);
 }
