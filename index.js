@@ -1,7 +1,9 @@
+// import key from "./environment.js";
+// console.log(key)
 const options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "2343109cb7mshcd6f7f86e084a6ap1bc643jsn7cf4819a71d3",
+    "X-RapidAPI-Key": ${environment.key},
     "X-RapidAPI-Host": "house-plants.p.rapidapi.com",
   },
 };
@@ -154,22 +156,21 @@ function removeUnnecesary(plants, category){
             }
           }
        })
+       
+       let forms=document.querySelectorAll('form')
+      //  console.log(forms)
+       forms.forEach(form=>{
+        form.addEventListener('submit', (event)=>{
+          event.preventDefault();
+          console.log('hey')
+          console.log(event.target)
+        })
+       })
+
+
         })
       })
   }
 }
 
 
-// closeModalButton.addEventListener('click', () => {
-        //     const modal = document.querySelector(openModalButton.dataset.modalTarget)
-        //     if(modal=== null)return
-        //     modal.classList.remove("active");
-        //     overlay.classList.remove("active");
-        // })
-
-
-         // overlay.addEventListener('click', () => {
-        //     const modal = document.querySelector('.modal.active')
-        //     modal.classList.remove('active');
-        //     overlay.classList.remove("active");
-        // })
