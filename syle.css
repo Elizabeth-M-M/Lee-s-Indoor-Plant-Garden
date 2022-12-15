@@ -16,10 +16,10 @@
   --text-margin: 1.5rem 0;
   --button-padding: 0.3rem 1rem;
   --regular-radius: 0.5rem;
-  --card-shadow: 0px 1px 2px 0px rgba(0, 255, 255, 0.7),
-    1px 2px 4px 0px rgba(243, 223, 204, 0.4),
-    2px 4px 8px 0px rgba(243, 223, 204, 0.4),
-    2px 4px 16px 0px rgba(105, 104, 39, 0.4);
+  --card-shadow: 0px 1px 2px 0px rgba(26, 27, 27, 0.7),
+    1px 2px 4px 0px rgba(43, 42, 41, 0.6),
+    2px 4px 8px 0px rgba(31, 30, 29, 0.6),
+    2px 4px 16px 0px rgba(20, 20, 20, 0.6);
 }
 
 /* apply to all elements */
@@ -32,97 +32,134 @@
 body {
   min-height: 100vh;
   width: 100vw;
-  background: var(--colmellow);
   color: var(--coldark);
   font-family: 'Alegreya', serif;
   font-size: 1.6rem;
   line-height: 1.6;
   text-align: center;
+  overflow-x: hidden;
 }
 header{
   width: 100%;
-  max-height: 100vh;
+  max-height: 80vh;
   background-color: var(--colmedium);
   position: relative;
+}
+.plant-display{
+  position: absolute;
+  z-index: 5;
+  top: -10%;
+  left: -5%;
 }
 .header-width-position{
   width: 80%;
   height: 100%;
   background-color: var(--collight);
-  margin: auto;  
+  margin: auto;
+  transform: translateY(5%);
   display: flex;
   flex: 1;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
-  top: 40%;
-  
+  box-shadow: var(--card-shadow);
 }
+
 .header-content{
   flex-basis: 50%;
-  align-self: stretch;
-  justify-self: start;
   display: flex;
   align-items: stretch;
-  
   justify-content: space-between;
   flex-direction: column;
   padding: 2rem;
+}
 
+ .header-content img{
+  width: 20rem;
+  align-self: center;
+  justify-self: start;
+  /* background-color: aquamarine; */
 }
-.header-content img{
-  width: 10rem;
-}
+
 .header-content-main{
   text-align: left;
-  
+
+} 
+.header-content-main{
+  text-align: left;
+  font-size: 1.7rem;
+  transform: translateX(10%);
+  width: 50%;
+  align-self: center;
+
+
+}
+.header-content-main h1{
+  font-size: 5rem;
+  line-height: 1;
+  margin: 1rem 0;
+  color: var(--colmedium);
 }
 .social{
-  align-self: start;
+  align-self: center;
 }
 .social ul{
   display: flex;
-  justify-content: space-between;
+ 
 }
 .social ul li{
 list-style: none;
 display: inline-block;
-margin: 1rem;
+margin: 1.5rem;
+background-color: var(--colmedium);
+padding: 2rem;
+border-radius: 150px 150px 150px 80px / 50px 150px 150px 135px;
+
 }
 .social ul li a{
-color: var(--coldark);
+color: var(--collight);
+font-size: 1.8rem;
+}
+.social ul li a:hover {
+  color: var(--colcontrast);
 }
 .header-img{
   flex-basis: 50%;
+  height: 60%;
+  
+
 }
 .header-img img{
-  width: 100%;
- 
+  width: 65%;
+  height: 60%;
+  
+
 }
+
 .intro{
- 
+
   font-size: 3rem;
   line-height: 1.2;
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(177, 171, 125, 0.4)), url(./Images/cacti-pots.png);
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(177, 171, 125, 0.4)), url(./Images/cacti-png.png);
 }
-.intro H1{
-  padding: 5rem;
+.intro h1{
+  padding: 6rem;
+  font-size: 6rem;
 }
+
 .most-liked{
   background-color: var(--colmedium);
   padding: 2rem 0;
-  
 
 }
 .most-liked-width{
   width: 80%;
-  margin:2rem auto;
+  margin:auto;
   display: flex;
-  flex-wrap: wrap;
 
 }
 .most-liked-card{
-  width: 40%;
+  
   max-width: 30rem;
   height: 30rem;
   background-color: var(--colmellowGradient);
@@ -132,19 +169,26 @@ color: var(--coldark);
 }
 .most-liked-card img{
   width: 100%;
-  height: 80%;
+  height: 100%;
+}
+.most-liked-card p{
+  margin:6rem 0;
+  font-weight: 600;
+  padding: 2rem;
+  font-size: 2rem;
+  color: var(--colcontrast);
+
 }
 .btn-dark.btn{
 background-color: var(--collight);
 color: var(--coldark);
 }
 
-
 .container-card-holder{
   width: 100%;
   display: flex;
   justify-content: space-between;
- 
+
   margin: 1rem;
 }
 .container-card{
@@ -182,6 +226,7 @@ color: var(--coldark);
   text-transform: capitalize;
   width: 60%;
   font-size: 1.5rem;
+
 }
 
 .invisible {
@@ -223,16 +268,8 @@ color:var(--collight);
   justify-content: space-between;
 }
 
-/* to display block,  
-remove invisible class to card-details
-remove withoutDits in .container-card-holder
-.container-card
 
-to display normal
-add invisible card-details class:display:none;
-.container-card-holder.withoutDits
-.container-card.withoutDits
-*/
+
 *,
 *::after,
 *::before {
@@ -320,4 +357,39 @@ form div{
 .modal .btn:hover {
     background-color: var(--coldark);
   color: var(--colwhite);
+} 
+@media (max-width:60rem){
+.header-width-position {
+    
+    transform: translateY(2%);
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    
+  }
+    .header-content-main {
+     
+      transform: translateX(1%);
+      
+  
+  
+    }
+        .header-content-main h1{
+    font-size: 3rem;
+    text-align: center;
+        }
+                .header-img img {
+                  width: 100%;
+                  height: 100%;
+        
+                }
+  .plant-display{
+  
+  top: -10%;
+  left: 40%;
 }
+.most-liked-width {
+  flex-direction: column;
+
+}
+      }

@@ -1,21 +1,29 @@
 // import key from "./environment.js";
 // console.log(key)
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": ${environment.key},
-    "X-RapidAPI-Host": "house-plants.p.rapidapi.com",
-  },
-};
 
-fetch("https://house-plants.p.rapidapi.com/all", options)
-  .then((response) => response.json())
-  .then((responses) => responses.forEach(response=>{
-    // console.log(response.category)
-    displayPlantinCategory(response)
-  }))
-  .catch((err) => console.error(err));
-
+document.addEventListener('DOMContentLoaded', ()=>{
+ loadPlantsFromExternalServer();
+})
+function loadPlantsFromExternalServer(){
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": ,
+        "X-RapidAPI-Host": "house-plants.p.rapidapi.com",
+      },
+    };
+    fetch("https://house-plants.p.rapidapi.com/all", options)
+      .then((response) => response.json())
+      .then((responses) => {
+        const half = Math.ceil(responses.length / 2); 
+        const firstHalf = responses.slice(0, half);        
+        firstHalf.forEach(response=>{
+          // console.log(response.category)
+          displayPlantinCategory(response)
+        })
+      })
+      .catch((err) => console.error(err));
+}
 
 
 
@@ -25,17 +33,16 @@ function displayPlantinCategory(plant){
     btn.addEventListener('click', (event)=>{
       if(btn.innerHTML === plant.category){
         if(plant.common[0]!==undefined){
-          displayPlants(plant)
-        // end of appending
+          displayPlants(plant);        
         }
       }
     })
   })
-  }
+}
+
 function displayPlants(plant){
     // console.log(plant)
-    let storageForContainers = document.querySelector('.most-liked-width.container')
-
+    let storageForContainers = document.querySelector('.most-liked-width.container');
     let container = document.createElement('div');
     container.className=`container-card-holder withoutDits ${plant.category}`
     container.innerHTML=`
@@ -55,41 +62,66 @@ function displayPlants(plant){
             <button class="btn btn-dark" data-modal-target="#modal" id="openModal">Interested</button>
           </div>
           <div class="modal" id="modal">
-        <div class="modal-header">
-          <h3><span>${plant.common[0]}</span> is a great pick</h3>
-          <button data-close-modal id="closeModal">&times;</button>
-          </div>
-        <form >
-          <div>
-            <p>What type do you need?</p>
-            <input type="checkbox" name="Artificial" id="artificial" value="artificial">
-            <label for="vehicle1"> Artificial</label><br>
-            <input type="checkbox" name="live" id="live" value="live">
-            <label for="vehicle1"> Live</label><br>
-          </div>
-          <div class="width">
-            <label for="height">Approximate height needed</label>
-            <input type="text" name="height" id="height" placeholder="In cm">
-          </div>
-          <div class="width">
-            <label for="location">Location</label>
-            <input type="text" placeholder="Delivery location">
-          </div>
-          <div class="width">
-            <label for="contact">Telephone Number</label>
-            <input type="tel" name="telephone" placeholder="+254..." id="telephone">
-          </div>
-          <input class="btn btn-dark" type="submit" value="Order Now">          
-          
-        </form>
+            <div class="modal-header">
+              <h3><span>${plant.common[0]}</span> is a great pick</h3>
+              <button data-close-modal id="closeModal">&times;</button>
+            </div>
+            <form >
+              <div class="width">
+                  <label for="name">Name</label>
+                  <input type="text" name="fullname" id="fullname" placeholder="Your name here">
+                </div>
+                <div class="width">
+                  <label for="plant type">Which plant type do  you need?</label><br>
+                  <input type="text" name="artificial/live" id="artificialOrLive" placeholder="Artificial/Live">
+                </div>
+                <div class="width">
+                  <label for="height">Approximate height needed</label>
+                  <input type="text" name="height" id="height" placeholder="In cm">
+                </div>
+                <div class="width">
+                  <label for="location">Location</label>
+                  <input type="text" placeholder="Delivery location" id="delivery">
+                </div>
+                <div class="width">
+                  <label for="contact">Telephone Number</label>
+                  <input type="tel" name="telephone" placeholder="+254..." id="telephone">
+                </div>
+                <input class="btn btn-dark" type="submit" value="Order Now">
+            </form>
         </div>
       <!-- overlay -->
-      <div id="overlay"></div>
+          <div id="overlay"></div>
   `
   storageForContainers.appendChild(container);
   // remove kids of container that do not belong to the plant.category
+  fetchImagesInternally()
+  
+
+
   let kids = storageForContainers.children;
   removeUnnecesary(kids, plant.category)
+}
+function fetchImagesInternally(){
+  fetch('http://localhost:3000/plantPics')
+  .then(resp=>resp.json())
+  .then(greeneries=>greeneries.forEach(greenery=>{
+  
+  let cards = document.querySelectorAll('.container-card.withoutDits')
+  // console.log(cards)
+  cards.forEach(card=>{
+    let title= card.querySelector('#plantName');
+    if(title.innerHTML=== greenery.name){
+      let image= title.previousElementSibling
+      console.log(greenery.img)
+      console.log(image.src)
+      image.src=greenery.img;
+    }
+    
+    
+  
+  })
+  }))
 }
 
 
@@ -156,14 +188,17 @@ function removeUnnecesary(plants, category){
             }
           }
        })
-       
+
        let forms=document.querySelectorAll('form')
       //  console.log(forms)
        forms.forEach(form=>{
         form.addEventListener('submit', (event)=>{
           event.preventDefault();
-          console.log('hey')
-          console.log(event.target)
+          // console.log('hey')
+          // console.log(event.target)
+          let formSelected = event.target
+          collectDeliveryInfo(formSelected)
+
         })
        })
 
@@ -174,3 +209,28 @@ function removeUnnecesary(plants, category){
 }
 
 
+function collectDeliveryInfo(form){
+    let tel= form.querySelector('#telephone').value;
+    let delivery= form.querySelector('#delivery').value;
+    let height= form.querySelector('#height').value;
+    let fullname= form.querySelector('#fullname').value;
+    let plantType= form.querySelector('#artificialOrLive').value;
+    // console.log(tel, delivery, height, fullname, plantType)
+    postData(tel, delivery, height, fullname, plantType)
+}
+function postData(tel, delivery, height, fullname, plantType){
+  fetch('http://localhost:3000/orders',{
+    method: 'POST',
+    headers:{
+      'Content-Type':"application/json",
+    },
+    body:JSON.stringify({
+      "name": fullname,
+      "plantType":plantType,
+      "height":height,
+      "delivery": delivery,
+      "telephoneNumber":tel,
+    })
+  }).then(response=>response.json())
+  .then(data=>console.log(data))
+}
