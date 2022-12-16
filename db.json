@@ -152,19 +152,19 @@
       "id": 1
     },
     {
-       "title": "“We can go from simple”",
+       "title": "“We Can Go from a Simple Look”",
        "text":"“I thought I was pretty cool until I realized plants can eat the sun and poop out air.” — Jim Bugg",
-      "image": "./Images/succulents.jpg",
+      "image": "./Images/front-succulent-display.jpg",
       "id": 2
     },
     {
-       "title": "“to a medium look”",
+       "title": "“To a Medium Look”",
        "text":"“Plants want to grow; they are on your side as long as you are reasonably sensible.” — Anne Wareham",
-      "image": "./Images/medium-saturated-plant-display.jpg",
+      "image": "./Images/monstera-display.jpg",
       "id": 3
     },
     {
-       "title": "“to even a jungle look”",
+       "title": "“To Even a Jungle Look”",
        "text":"“Plants are like people: they’re all different and a little bit strange.” — John Kehoe",
       "image": "./Images/jungle-look.jpg",
       "id": 4

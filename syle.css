@@ -4,15 +4,15 @@
 /* root specs */
 :root {
   font-size: 62.5%;
-  --coldark: #161515;
+  --coldark: #1d1914;
   --colblack: #000000;
   --collight: rgb(179, 175, 144);
-  --colmellow: rgb(189, 176, 82);
+  --colmellow: rgb(192, 185, 130);
   --colmellowGradient: rgba(206, 201, 163, 0.6);
   --colwhiteGradient: rgba(255, 255, 255, 0.5);
   --colwhite: rgb(255, 255, 255);
   --colmedium: rgba(33, 71, 62, 0.9);
-  --colcontrast: rgb(255, 170, 0);
+  --colcontrast: rgb(153, 105, 8);
   --text-margin: 1.5rem 0;
   --button-padding: 0.9rem 1.4rem;
   --regular-radius: 0.5rem;
@@ -44,12 +44,14 @@ body {
   text-align: center;
   overflow-x: hidden;
 }
+
 header{
   width: 100%;
   max-height: 80vh;
   background-color: var(--colmedium);
   position: relative;
 }
+
 .plant-display{
   position: absolute;
   z-index: 2;
@@ -58,131 +60,115 @@ header{
 }
 .header-width-position{
   width: 80%;
-  height: 100%;
+  height: 50rem;
   background-color: var(--collight);
   margin: auto;
-  transform: translateY(5%);
+  transform: translateY(7%);
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: space-between;
   position: relative;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--card-shadow-dark);
 }
+
 .headerbtns{
   position: absolute;
   width: 100%;
-  bottom: 0;
-  right: 0%;
-  transform: translate(-50% -50%);
+  bottom: 20%;
+  right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
-  z-index: 9;
-
-  
 }
 .headerbtns button{
   background: transparent;
   border: none;
 }
 .headerbtns button i{
-  font-size: 3rem;
-  color: var(--colmedium);
-  transition: .3s;
+  font-size: 2.5rem;
+  color: var(--coldark);
+  transition: .2s;
 }
 .headerbtns button i:hover {
-  font-size: 3.5rem;
-  color: var(--colwhite);
+  font-size: 3rem;
 }
-
-
 .header-content{
   flex-basis: 50%;
+  height: 100%;
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-between;
   flex-direction: column;
   padding: 2rem;
-}
-
+  }
  .header-content img{
+  margin-top: 2rem;
   width: 20rem;
-  align-self: center;
   justify-self: start;
-  /* background-color: aquamarine; */
 }
-
-.header-content-main{
-  text-align: left;
-
-} 
 .header-content-main{
   text-align: left;
   font-size: 1.7rem;
   transform: translateX(10%);
-  width: 50%;
-  align-self: center;
-
-
+  width: 80%;
 }
 .header-content-main h1{
   font-size: 5rem;
   line-height: 1;
-  margin: 1rem 0;
   color: var(--colmedium);
+  margin: 2rem 0;
 }
-.social{
-  align-self: center;
-}
+
 .social ul{
   display: flex;
- 
 }
 .social ul li{
 list-style: none;
-display: inline-block;
-margin: 1.5rem;
+margin: 0 1.5rem;
 background-color: var(--colmedium);
 padding: 2rem;
 border-radius: 150px 150px 150px 80px / 50px 150px 150px 135px;
-
+}
+.social ul li:hover{
+background-color: var(--colcontrast);
 }
 .social ul li a{
 color: var(--collight);
 font-size: 1.8rem;
 }
 .social ul li a:hover {
-  color: var(--colcontrast);
+  color: var(--coldark);
 }
 .header-img{
   flex-basis: 50%;
-  height: 60%;
-  
-
+  height: 100%;
 }
 .header-img img{
-  width: 65%;
-  height: 60%;
-  
-
+  width: 75%;
+  height: 100%;
 }
 
 .intro{
-
+  width: 100%;
   font-size: 3rem;
-  line-height: 1.2;
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(177, 171, 125, 0.4)), url(./Images/cacti-png.png);
+  line-height: 1;
+  background: linear-gradient(rgba(165, 163, 163, 0.7), rgba(163, 155, 92, 0.4));
+  background-position: 20% 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .intro h1{
   padding: 6rem;
   font-size: 6rem;
+  color: var(--colcontrast);
+  text-shadow: 0 0.5rem 0.3rem var(--collight)
 }
 
 .most-liked{
   background-color: var(--colmedium);
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
 
 }
 .most-liked-width{
@@ -193,8 +179,8 @@ font-size: 1.8rem;
 
 }
 .most-liked-card{
-  
-  max-width: 30rem;
+  color: var(--coldark);
+  width: 30rem;
   height: 30rem;
   background-color: var(--colmellowGradient);
   border-radius: var(--regular-radius);
@@ -206,11 +192,10 @@ font-size: 1.8rem;
   height: 100%;
 }
 .most-liked-card p{
-  margin:6rem 0;
+  margin:5.5rem 0;
   font-weight: 600;
   padding: 2rem;
   font-size: 2rem;
-  color: var(--colcontrast);
 
 }
 .btn-dark.btn{
@@ -218,12 +203,18 @@ background-color: var(--collight);
 color: var(--coldark);
 }
 
+
+.most-liked-width.container{
+padding: 2rem;
+}
+
 .container-card-holder{
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-
   margin: 1rem;
+  
 }
 .container-card{
   width: 40%;
@@ -234,12 +225,17 @@ color: var(--coldark);
   margin: 1rem;
   overflow: hidden;
   background-color: var(--colwhiteGradient);
+  box-shadow: 0 0.6rem 1rem var(--coldark);
 }
 
 .container-card img {
   width: 100%;
   height: 70%;
 }
+.container-card button{
+  margin: 1rem;
+}
+
 .container-card-holder.withoutDits {
   width: 40%;
   max-width: 30rem;
@@ -251,15 +247,17 @@ color: var(--coldark);
   height: 100%;
 }
 .container-card-details {
-
   background-color: var(--colmedium);
-  color: var(--collight);
+  color: var(--colwhite);
   padding: 2rem;
   border-radius: var(--regular-radius);
-  text-align: left;
+  text-align: center;
   text-transform: capitalize;
   width: 60%;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  height: 30rem;
+  margin: 1rem;
+  box-shadow: var(--card-shadow-light);
 
 }
 
@@ -270,13 +268,29 @@ color: var(--coldark);
 
 
 .container-card-details h4 {
-  font-size: 1.5rem;
+  font-size: 2rem;
+}
+.container-card-details h2 span, .container-card-details h4{
+  color: var(--colcontrast);
+}
+.container-card-details h4 span{
+  color: var(--colwhite);
+  font-size: 1;
 }
 
 
+
 .other-plants-intro{
+  /* margin: 2rem 0; */
+  line-height: 1.1;
+  font-size: 3rem;
+}
+.other-plants-intro h2{
   margin-top: 2rem;
-  font-size: 2rem;
+}
+.other-plants-intro h5 {
+  margin: 1rem;
+  color: var(--colcontrast);
 }
 .btn{
   padding: var(--button-padding);
@@ -286,8 +300,12 @@ color: var(--coldark);
   color: var(--colwhite);
   font-weight: 600;
   border-radius: var(--regular-radius);
-  margin: 2rem 1rem;
+  margin: 0.8rem;
+  transition: .2s;
   cursor: pointer;
+}
+.btn:hover{
+  background-color:var(--colcontrast);  
 }
 .footer{
 background-color: var(--colmedium);
@@ -391,22 +409,25 @@ form div{
 .modal .btn:hover {
     background-color: var(--coldark);
   color: var(--colwhite);
-} 
+}
 @media (max-width:60rem){
+  .container{
+    width: 95%;
+  }
 .header-width-position {
-    
+
     transform: translateY(2%);
     flex-direction: column;
     height: 100vh;
     overflow: hidden;
-    
+
   }
     .header-content-main {
-     
+
       transform: translateX(1%);
-      
-  
-  
+
+
+
     }
         .header-content-main h1{
     font-size: 3rem;
@@ -415,15 +436,43 @@ form div{
                 .header-img img {
                   width: 100%;
                   height: 100%;
-        
+
                 }
   .plant-display{
-  
+
   top: -10%;
   left: 40%;
 }
 .most-liked-width {
   flex-direction: column;
 
+}
+.container-card-details{
+  height: auto;
+  width: 90%;
+}
+.container-card-holder{
+  align-items: center;
+  flex-direction: column;
+}
+.container-card {
+  width: 55%;
+  max-width: 30rem;
+  height: 30rem;
+}
+.container-card-holder.withoutDits {
+  width: 55%;
+  max-width: 30rem;
+  height: 30rem;
+}
+.headerbtns button i {
+  color: var(--colwhite);
+}
+.headerbtns{
+  bottom: 20%;
+  z-index: 7;
+}
+.modal{
+  width: 80%;
 }
       }

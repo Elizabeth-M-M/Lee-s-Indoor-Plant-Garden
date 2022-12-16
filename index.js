@@ -11,7 +11,7 @@ function loadPlantsFromExternalServer(){
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": ,
+        "X-RapidAPI-Key":,
         "X-RapidAPI-Host": "house-plants.p.rapidapi.com",
       },
     };
@@ -55,7 +55,7 @@ function displayPlants(plant){
             <button id="moreBtn" class="btn">More</button>
           </div>
           <div class="container-card-details invisible">
-            <h2>Need to know about ${plant.common[0]}</h2>
+            <h2>Need to know about <span> ${plant.common[0]}</span></h2>
             <h4>watering</h4>
             <p>${plant.watering}</p>
             <h4>Ideal light</h4>
@@ -116,8 +116,8 @@ function fetchImagesInternally(){
     let title= card.querySelector('#plantName');
     if(title.innerHTML=== greenery.name){
       let image= title.previousElementSibling
-      console.log(greenery.img)
-      console.log(image.src)
+      // console.log(greenery.img)
+      // console.log(image.src)
       image.src=greenery.img;
     }
     
@@ -138,7 +138,7 @@ function removeUnnecesary(plants, category){
     // console.log(moreBtns)
     moreBtns.forEach(more=>{
       more.addEventListener('click', ()=>{
-        // console.log(more.parentElement)
+        console.log(more.parentElement)
         let containerCards = document.querySelectorAll('.container-card')
         let parent1 =more.parentElement;
         let grandparent = parent1.parentElement;
