@@ -1,5 +1,5 @@
-// import key from "./environment.js";
-// console.log(key)
+import keyForUse from "./environment.js";
+
 let currentItem = 0;
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -11,7 +11,7 @@ function loadPlantsFromExternalServer(){
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key":,
+        "X-RapidAPI-Key":keyForUse,
         "X-RapidAPI-Host": "house-plants.p.rapidapi.com",
       },
     };
