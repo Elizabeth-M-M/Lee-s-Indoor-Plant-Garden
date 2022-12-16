@@ -1,8 +1,11 @@
 // import key from "./environment.js";
 // console.log(key)
+let currentItem = 0;
 
 document.addEventListener('DOMContentLoaded', ()=>{
  loadPlantsFromExternalServer();
+ getDataForCarousel()
+ 
 })
 function loadPlantsFromExternalServer(){
     const options = {
@@ -47,7 +50,7 @@ function displayPlants(plant){
     container.className=`container-card-holder withoutDits ${plant.category}`
     container.innerHTML=`
           <div class="container-card withoutDits">
-            <img src="Images/front-succulent-display.jpg" alt="">
+            <img src="" alt="">
             <h3 id="plantName">${plant.common[0]}</h3>
             <button id="moreBtn" class="btn">More</button>
           </div>
@@ -234,3 +237,43 @@ function postData(tel, delivery, height, fullname, plantType){
   }).then(response=>response.json())
   .then(data=>console.log(data))
 }
+let header = document.querySelector('.header-content-main h1');
+  let headerP = document.querySelector('.header-content-main p');
+  let headerImage = document.querySelector('.header-img img');
+  let right = document.querySelector('#right');
+  let left = document.querySelector('#left');
+
+function getDataForCarousel(){
+fetch(`http://localhost:3000/startSection`)
+.then(resp=>resp.json())
+.then(responses=>{
+  displayCourosel(responses)
+  
+})
+}
+function displayCourosel(responses){
+  
+  if(currentItem>responses.length-1){
+    currentItem=0; 
+  }else if(currentItem<0){
+currentItem=responses.length-1
+  }
+  let item = responses[currentItem]
+  header.innerHTML=item.title
+  headerP.innerHTML=item.text
+  headerImage.src=item.image
+ 
+}
+right.addEventListener('click', ()=>{
+  
+currentItem++
+  // console.log(currentItem)
+  getDataForCarousel();
+ 
+  
+})
+left.addEventListener('click', ()=>{
+  currentItem--
+  // console.log(currentItem)
+  getDataForCarousel();
+})

@@ -6,20 +6,24 @@
   font-size: 62.5%;
   --coldark: #161515;
   --colblack: #000000;
-  --collight: rgb(177, 171, 125);
-  --colmellow: rgb(206, 201, 163);
+  --collight: rgb(179, 175, 144);
+  --colmellow: rgb(189, 176, 82);
   --colmellowGradient: rgba(206, 201, 163, 0.6);
   --colwhiteGradient: rgba(255, 255, 255, 0.5);
   --colwhite: rgb(255, 255, 255);
-  --colmedium: rgba(43, 78, 69, 0.9);
-  --colcontrast: rgb(255, 187, 0);
+  --colmedium: rgba(33, 71, 62, 0.9);
+  --colcontrast: rgb(255, 170, 0);
   --text-margin: 1.5rem 0;
-  --button-padding: 0.3rem 1rem;
+  --button-padding: 0.9rem 1.4rem;
   --regular-radius: 0.5rem;
-  --card-shadow: 0px 1px 2px 0px rgba(26, 27, 27, 0.7),
+  --card-shadow-dark: 0px 1px 2px 0px rgba(26, 27, 27, 0.7),
     1px 2px 4px 0px rgba(43, 42, 41, 0.6),
     2px 4px 8px 0px rgba(31, 30, 29, 0.6),
     2px 4px 16px 0px rgba(20, 20, 20, 0.6);
+  --card-shadow-light: 0px 1px 2px 0px rgba(223, 235, 235, 0.7),
+        1px 2px 4px 0px rgba(241, 239, 237, 0.6),
+        2px 4px 8px 0px rgba(231, 228, 225, 0.6),
+        2px 4px 16px 0px rgba(240, 236, 236, 0.6);
 }
 
 /* apply to all elements */
@@ -34,6 +38,7 @@ body {
   width: 100vw;
   color: var(--coldark);
   font-family: 'Alegreya', serif;
+  background-color: var(--colmellow);
   font-size: 1.6rem;
   line-height: 1.6;
   text-align: center;
@@ -47,7 +52,7 @@ header{
 }
 .plant-display{
   position: absolute;
-  z-index: 5;
+  z-index: 2;
   top: -10%;
   left: -5%;
 }
@@ -64,6 +69,34 @@ header{
   position: relative;
   box-shadow: var(--card-shadow);
 }
+.headerbtns{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  right: 0%;
+  transform: translate(-50% -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  z-index: 9;
+
+  
+}
+.headerbtns button{
+  background: transparent;
+  border: none;
+}
+.headerbtns button i{
+  font-size: 3rem;
+  color: var(--colmedium);
+  transition: .3s;
+}
+.headerbtns button i:hover {
+  font-size: 3.5rem;
+  color: var(--colwhite);
+}
+
 
 .header-content{
   flex-basis: 50%;
@@ -156,6 +189,7 @@ font-size: 1.8rem;
   width: 80%;
   margin:auto;
   display: flex;
+  flex-wrap: wrap;
 
 }
 .most-liked-card{

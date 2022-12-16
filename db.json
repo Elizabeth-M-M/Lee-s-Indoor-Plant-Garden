@@ -18,23 +18,156 @@
       "name": "Rubber plant",
       "img": "https://bloomscape.com/wp-content/uploads/2022/08/bloomscape_burgundy-rubber-tree_lg_charcoal-768x922.jpg?ver=927090",
       "id": 4
-    }
-    ,
+    },
     {
-      "name": "",
-      "img": "",
-      "id": 4
+      "name": "Bella palm",
+      "img": "https://www.plantjungle.com/wp-content/uploads/2018/04/Neanthe-Bella-PalmWEB.jpg",
+      "id": 5
+    },
+    {
+      "name": "Bamboo palm",
+      "img": "https://www.viviano.com/images/prodshots_new/214606P_z.jpg",
+      "id": 6
+    },
+    {
+      "name": "Miniature fishtail",
+      "img": "https://nurtureplant.in/wp-content/uploads/2019/09/c6-12-2.jpg",
+      "id": 7
+    },
+    {
+      "name": "Sago palm",
+      "img": "http://mobileimages.lowes.com/productimages/6b22b7ee-d6a3-4cd8-81b0-dfa6d1a0b6aa/43160616.jpg",
+      "id": 8
+    },
+    {
+      "name": "Areca palm",
+      "img": "https://cdn.shopify.com/s/files/1/0059/8835/2052/products/Areca_Palm_4_FGT_650x.jpg?v=1638144911",
+      "id": 9
+    },
+    {
+      "name": "Grape Ivy",
+      "img": "http://hellogardening.co.uk/wp-content/uploads/2019/11/grape-ivy.jpeg",
+      "id": 10
+    },
+    {
+      "name": "Spider plant",
+      "img": "https://plants4presents.co.uk/pub/media/catalog/product/cache/ac60ba860a042e6c661f0e2e13b457bb/s/p/spiderplant2022aboveg.jpg",
+      "id": 11
+    },
+    {
+      "name": "White Pothos",
+      "img": "https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/61ZYXeWr0BL._SX679_.jpg",
+      "id": 12
+    },
+    {
+      "name": "Algerian ivy",
+      "img": "https://cdn.shopify.com/s/files/1/0507/0775/9293/products/plant-ivy-algerian-fleur-co-plants-shop-canada-38464832307440_1023x.jpg?v=1660741317",
+      "id": 13
+    },
+    {
+      "name": "Golden Pothos",
+      "img": "https://i.etsystatic.com/14339179/r/il/e626c6/2322638407/il_794xN.2322638407_4fsx.jpg",
+      "id": 14
+    },
+    {
+      "name": "Japanese Aralia",
+      "img": "https://www.whiteflowerfarm.com/mas_assets/cache/image/4/a/7/a/19066.Jpg",
+      "id": 15
+    },
+    {
+      "name": "Willow fig tree",
+      "img": "https://www.bonsaiempire.com/images/carrousel/ficus01-retusa-small.jpg",
+      "id": 16
+    },
+    {
+      "name": "Weeping fig",
+      "img": "https://cdn.shopify.com/s/files/1/1706/1307/products/Ficus-benjamina-Danielle-Weeping-Fig-Branched-New_5000x.jpg?v=1669903830",
+      "id": 17
+    },
+    {
+      "name": "Creeping fig",
+      "img": "https://cdn.shopify.com/s/files/1/2449/3351/products/image_496148a9-9373-4254-80ea-7e886754277b_540x.heic?v=1661457081",
+      "id": 18
+    },
+    {
+      "name": "Golden Trumpet",
+      "img": "https://www.aldarmakyuae.com/wp-content/uploads/2021/11/Allamanda-cathartica.jpg",
+      "id": 19
+    },
+    {
+      "name": "Bougainvillia",
+      "img": "https://render.fineartamerica.com/images/rendered/default/print/7/8/break/images/artworkimages/medium/1/magenta-bougainvillea-jean-hutchins.jpg",
+      "id": 20
+    },
+    {
+      "name": "Maindenhair",
+      "img": "https://www.thespruce.com/thmb/-GTcDMD6IZ9FaPdjcnMfeLOyrj8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/grow-adiantum-ferns-1902722-10-4e79074809694fa8bea32a562b1eb28a.jpg",
+      "id": 21
+    },
+    {
+      "name": "Rosy Maidenhair",
+      "img": "https://i.ebayimg.com/images/g/1U4AAOSwokNgKBdO/s-l500.jpg",
+      "id": 23
+    },
+    {
+      "name": "Miniature tree fern",
+      "img": "https://cdn.shopify.com/s/files/1/0038/9405/0868/products/BlechnumGibbum_SilverLady_DwarfTreeFern_1gal_f4e52698-b856-4313-91c6-cc7be50c6476_704x704.jpg?v=1640307059",
+      "id": 24
+    },
+    {
+      "name": "Birdnest fern",
+      "img": "https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fit,w_365,h_365/gen-workflow%2Fproduct-listing%2Fbirdsnestfernamz",
+      "id": 25
+    },
+    {
+      "name": "Tree Maindenhair fern",
+      "img": "https://img.crocdn.co.uk/images/products2/pl/20/00/04/65/pl2000046593.jpg?width=940&height=940",
+      "id": 26
+    },
+    {
+      "name": "Holly-fern",
+      "img": "https://cdn11.bigcommerce.com/s-utxoc9h0ae/images/stencil/1280x1280/products/191/1270/c7b7e6f0-5ef1-549f-9b61-2743bc63bf53__62680.1584717854.jpg?c=2",
+      "id": 27
+    },
+    {
+      "name": "Rabbits foot",
+      "img": "https://cdn.shopify.com/s/files/1/1706/1307/products/Humata-tyermannii-White-Rabbits-Foot-Fern_5000x.jpg?v=1668586543",
+      "id": 28
+    },
+    {
+      "name": "Silver vase",
+      "img": "https://assets.eflorist.com/site/EF-5818/assets/products/PZM_/sku6581417.jpg",
+      "id": 29
+    },
+    {
+      "name": "Coral berry",
+      "img": "https://i.pinimg.com/564x/47/82/0b/47820b4eeab6fb53679db4df037e6cac.jpg",
+      "id": 30
     }
   ],
-  "startPage": [{
-      "catName": "Stanley",
-      "catBreed": "Tabby",
+  "startSection": [{
+      "title": "“A Leafy Little Home”",
+      "text":"“Plants give us oxygen for the lungs and for the soul.” — Terri Guillemets",
+      "image": "./Images/medium-saturated-plant-display.jpg",
       "id": 1
     },
     {
-      "catName": "Gunnar",
-      "catBreed": "American Shorthair",
+       "title": "“We can go from simple”",
+       "text":"“I thought I was pretty cool until I realized plants can eat the sun and poop out air.” — Jim Bugg",
+      "image": "./Images/succulents.jpg",
       "id": 2
+    },
+    {
+       "title": "“to a medium look”",
+       "text":"“Plants want to grow; they are on your side as long as you are reasonably sensible.” — Anne Wareham",
+      "image": "./Images/medium-saturated-plant-display.jpg",
+      "id": 3
+    },
+    {
+       "title": "“to even a jungle look”",
+       "text":"“Plants are like people: they’re all different and a little bit strange.” — John Kehoe",
+      "image": "./Images/jungle-look.jpg",
+      "id": 4
     }
   ],
   "orders": [
