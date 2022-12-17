@@ -6,7 +6,9 @@ Program by Elizabeth Mwende Muthusi
 15/12/2022.
 
 ### About the program
+
 This is a mini web app/ page belonging to a person who sells indoor house plants. A user is able to get a vision of what he/ she wants to plant and select from a wide variety of categories depending on the user's needs.
+You need to run the db.json server to work with this app that works concurrently with the external API.
 If a user selects a plant from a particular category by clicking `More`, a pop up of the plant details will pop up showing different requirements needed to grow the plant, fun facts about its origin. If the user is interested, he will click the button `Interested`.
 A pop up page again will then appear prompting the user to enter details pertaining to name, height of plant required, live or artificial, delivery location and telephone number. The user clicks on submit to submit the data.
 If the user is not interested, they can close the pop up and continue browsing.
@@ -34,3 +36,5 @@ I also used `environment.js` to store the external API key.
 
 For the `loadPlantsFromExternalServer()`, respective plant category's name was stored in a button. When the button of a particulay category is clicked, `displayPlants(plant)` is called that creates a div with an innerHTML of details of the plant. The div is then appended to the container element with the query selector `.most-liked-width.container`.
 `fetchImagesInternally()` is then called to fetch images of the plant displayed.
+
+<!-- to be continued. Need to modify the code. Too confusing. -->
