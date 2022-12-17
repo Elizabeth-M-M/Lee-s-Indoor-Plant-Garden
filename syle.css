@@ -47,7 +47,7 @@ body {
 
 header{
   width: 100%;
-  max-height: 80vh;
+  max-height: 100vh;
   background-color: var(--colmedium);
   position: relative;
 }
@@ -55,12 +55,13 @@ header{
 .plant-display{
   position: absolute;
   z-index: 2;
-  top: -10%;
+  top: -20%;
   left: -5%;
+  /* background-color: #000000; */
 }
 .header-width-position{
   width: 80%;
-  height: 50rem;
+  height: 40rem;
   background-color: var(--collight);
   margin: auto;
   transform: translateY(7%);
@@ -75,12 +76,14 @@ header{
 .headerbtns{
   position: absolute;
   width: 100%;
-  bottom: 20%;
+  bottom: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  /* background-color: aqua; */
+  z-index: 7;
 }
 .headerbtns button{
   background: transparent;
@@ -101,12 +104,13 @@ header{
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1rem;
   }
  .header-content img{
   margin-top: 2rem;
-  width: 20rem;
+  width: 15rem;
   justify-self: start;
+  /* background-color: aqua; */
 }
 .header-content-main{
   text-align: left;
@@ -128,7 +132,7 @@ header{
 list-style: none;
 margin: 0 1.5rem;
 background-color: var(--colmedium);
-padding: 2rem;
+padding: 1.5rem;
 border-radius: 150px 150px 150px 80px / 50px 150px 150px 135px;
 }
 .social ul li:hover{
@@ -411,6 +415,27 @@ form div{
   color: var(--colwhite);
 }
 @media (max-width:60rem){
+  .social ul li {
+      
+      margin:1rem;
+      
+      padding:0.3rem 0.5rem;
+      
+    }
+        .social ul li a{
+    
+          font-size: 1.4rem;
+        }
+
+  header{
+    max-height: 110vh;
+  }
+  
+  .header-content img {
+      /* margin-top: rem; */
+      width: 10rem;
+     
+    }
   .container{
     width: 95%;
   }
@@ -418,7 +443,7 @@ form div{
 
     transform: translateY(2%);
     flex-direction: column;
-    height: 100vh;
+    height: 120vh;
     overflow: hidden;
 
   }
@@ -441,7 +466,7 @@ form div{
   .plant-display{
 
   top: -10%;
-  left: 40%;
+  left: 55%;
 }
 .most-liked-width {
   flex-direction: column;
