@@ -24,17 +24,9 @@ This project required a set up of a local server to store our plant images to di
 The `index.html` structure was built out and divided into five sections; header, intro, most liked, other plant section and a footer section.
 
 #### CSS
-Using `stye.css`, I built out the design of the page.
+Using `stye.css` and bootstrap, I built out the design of the page.
 
 #### JavaScript
 Using `index.js`, I built out the functionality of the app.
 I also used `environment.js` to store the external API key.
-
-- Once the DOM loads, data is first fetched from both the external and internal server and called in the functions `loadPlantsFromExternalServer()` and `getDataForCarousel()` for the respective APIs. The first function fetches the plant details and the second the data for the top of the web page.
-
-`getDataForCarousel()` gets data and calls the `displayCourosel(responses)` to display the courosel.
-
-For the `loadPlantsFromExternalServer()`, respective plant category's name was stored in a button. When the button of a particulay category is clicked, `displayPlants(plant)` is called that creates a div with an innerHTML of details of the plant. The div is then appended to the container element with the query selector `.most-liked-width.container`.
-`fetchImagesInternally()` is then called to fetch images of the plant displayed.
-
 <!-- to be continued. Need to modify the code. Too confusing. -->
