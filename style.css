@@ -1,0 +1,157 @@
+/* general */
+.theme-color {
+  background: linear-gradient(rgba(187, 187, 108, 0.9), rgba(204, 191, 116, 0.9)), url("./Images/palms.jpg");
+}
+
+.contrast-bg {
+  background-color: rgb(73, 139, 95);
+}
+
+.contrast-color {
+  color: rgb(22, 87, 87);
+}
+
+/* corousel section */
+.c-slider {
+  height: 60vh;
+  overflow: hidden;
+}
+
+.c-slider img {
+  width: 55%;
+  height: 100%;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+}
+
+.content-overlay {
+  position: absolute;
+  top: 15%;
+  right: 2%;
+  width: 30%;
+  color: rgb(58, 41, 5);
+  background-color: rgba(224, 219, 215, 0.8);
+  box-shadow: 0.5rem 1rem 1rem rgba(0, 0, 0, 0.8);
+  border-radius: 1rem;
+}
+
+.content-overlay2 {
+  top: 5%;
+  left: 0;
+  background-color: transparent;
+  box-shadow: none;
+  width: 40%;
+  height: 90%;
+
+}
+
+.content-overlay2 img {
+  /* border-radius: 0; */
+}
+
+/* intro section */
+.intro {
+  height: 50vh;
+}
+
+.intro img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.8);
+}
+
+.plant-height {
+  height: 20px;
+}
+
+/* collection section */
+.boxCard {
+  height: 350px;
+}
+
+.boxCard .card-body {
+  width: 100%;
+  height: 100%;
+}
+
+.boxCard img {
+  height: 70%;
+}
+
+/* modals(general) */
+.modals {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border-radius: 1rem;
+  z-index: 3;
+  padding: 2rem;
+  text-align: left;
+}
+
+.modals.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+#closeModal {
+  outline: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, .8);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* screen less than 768px */
+@media(max-width:768px) {
+  .modals {
+    width: 90%;
+  }
+
+  .content-overlay {
+    top: 0;
+    right: 0;
+    width: 50%;
+    border-radius: 0;
+  }
+
+  .content-overlay2 {
+    top: 70%;
+    left: 50%;
+    display: none;
+  }
+
+  .c-slider {
+    height: 60vh;
+  }
+
+  .c-slider img {
+    width: 100%;
+    height: 100%;
+  }
+}
