@@ -5,104 +5,220 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./syle.css">
-  <!-- Icons link -->
-  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-  <title>Lee's Indoor Garden Shop</title>
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <!-- bootstrap css link -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <!-- project css link -->
+  <link rel="stylesheet" href="./style.css">
+  <title>Lee's Indoor Garden</title>
 </head>
 
-<body>
-  <!-- header section -->
-  <header>
-    <div class="plant-display">
-      <img src="./Images/climb1edit.png" alt="hanging plant">
-    </div>
-    <div class="header-width-position">
-    <!-- header right side -->
-      <div class="header-content">
-        <img src="./Images/logofinal.png" alt="logo">
-        <div class="header-content-main">
-          <h1>A Leafy Little Home</h1>
-          <p>“Plants give us oxygen for the lungs and for the soul.” — Terri Guillemets</p>
-        </div>
-        <div class="social">
-          <ul>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- header img left side -->
-      <div class="header-img">
-        <img src="./Images/medium-saturated-plant-display.jpg" alt="">
-      </div>
-      <div class="headerbtns">
-        <button id="left"><i class="fa fa-chevron-left"></i></button>
-        <button id="right"><i class="fa fa-chevron-right"></i></button>
-      </div>
-    </div>
+<body class="theme-color">
 
-  </header>
+  <!-- nav -->
+  <nav class="navbar">
+    <div class="container">
+      <img src="./Images/logofinal.png" class="navbar-brand img-fluid" alt="shop logo" style="width: 120px;">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="#ourCollection" class="nav-link contrast-color">Our Collection</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- corousel section -->
+  <section class="p-3 text-center">
+    <div class="container">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- item1 -->
+          <div class="carousel-item active">
+            <div class="c-slider position-relative">
+              <div class="content-overlay content-overlay2">
+                <img src="./Images/1dp.jpg" class="img-responsive" alt="...">
+              </div>
+              <div class="content-overlay p-3 p-md-5">
+                <h1>Our Leafy Little Home</h1>
+              </div>
+              <img src="./Images/medium-saturated-plant-display.jpg" class="img-responsive" alt="...">
+            </div>
+          </div>
+          <!-- item2 -->
+          <div class="carousel-item">
+            <div class="c-slider position-relative">
+              <div class="content-overlay content-overlay2">
+                <img src="./Images/3model.jpg" class="img-responsive" alt="...">
+              </div>
+              <div class="content-overlay p-3 p-md-5">
+                <figure>
+                  <blockquote class=" blockquote">
+                    <p>“I thought I was pretty cool until I realized plants can eat the sun and poop out air.”</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Source Title" class="contrast-color">Jim Bugg</cite>
+                  </figcaption>
+                </figure>
+              </div>
+              <img src="./Images/3dp.jpg" class="img-responsive" alt="...">
+            </div>
+          </div>
+          <!-- item3 -->
+          <div class="carousel-item">
+            <div class="c-slider position-relative">
+              <div class="content-overlay content-overlay2">
+                <img src="./Images/4dp.jpg" class="img-responsive" alt="...">
+              </div>
+              <div class="content-overlay p-3 p-md-5">
+                <figure>
+                  <blockquote class=" blockquote">
+                    <p>“Plants want to grow; they are on your side as long as you are reasonably sensible.”</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Source Title" class="contrast-color">Anne Wareham</cite>
+                  </figcaption>
+                </figure>
+              </div>
+              <img src="./Images/4model.jpg" class="img-responsive" alt="...">
+            </div>
+          </div>
+
+          <!-- item4 -->
+          <div class="carousel-item">
+            <div class="c-slider position-relative">
+              <div class="content-overlay content-overlay2">
+                <img src="./Images/5model.jpg" class="img-responsive" alt="...">
+              </div>
+              <div class="content-overlay p-3 p-md-5">
+                <figure>
+                  <blockquote class=" blockquote">
+                    <p>“Plants are like people: they’re all different and a little bit strange.”</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Source Title" class="contrast-color">John Kehoe</cite>
+                  </figcaption>
+                </figure>
+              </div>
+              <img src="./Images/5dp.jpg" class="img-responsive" alt="...">
+            </div>
+          </div>
+
+          <!-- item5 -->
+          <div class="carousel-item">
+            <div class="c-slider position-relative">
+              <div class="content-overlay content-overlay2">
+                <img src="./Images/6dp.jpg" class="img-responsive" alt="...">
+              </div>
+              <div class="content-overlay p-3 p-md-5">
+                <figure>
+                  <blockquote class=" blockquote">
+                    <p>“Plants are like people: they’re all different and a little bit strange.”</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Source Title" class="contrast-color">John Kehoe</cite>
+                  </figcaption>
+                </figure>
+              </div>
+              <img src="./Images/6model.jpg" class="img-responsive" alt="...">
+            </div>
+          </div>
+          <!-- end -->
+          <!-- item6 -->
+          <div class="carousel-item">
+            <div class="c-slider position-relative">
+              <div class="content-overlay content-overlay2">
+                <img src="./Images/7model.jpg" class="img-responsive" alt="...">
+              </div>
+              <div class="content-overlay p-3 p-md-5">
+                <figure>
+                  <blockquote class=" blockquote">
+                    <p>“Plants give us oxygen for the lungs and for the soul.”</p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                    <cite title="Source Title" class="contrast-color">Terri Guillemets</cite>
+                  </figcaption>
+                </figure>
+              </div>
+              <img src="./Images/7dp.jpg" class="img-responsive" alt="...">
+            </div>
+          </div>
+          <!-- end -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- title section -->
+  <section class="p-5 text-center contrast-bg text-light">
+    <h1>Welcome to
+      Lee's Indoor <br>Garden Shop</h1>
+  </section>
   <!-- intro section -->
-  <section class="intro">
-    <h1>Welcome to <br>Lee's indoor Garden</h1>
+  <section class="p-5 text-center">
+    <div class="container">
+      <div class="row">
+        <div class="intro col-md-4">
+          <img src="Images/models1.jpg" class="img-fluid" alt="gardening tools">
+        </div>
+        <div class="intro col-md-4 p-5">
+          <div>
+            <h4>Gardening is also Beginner Friendly</h4>
+            <figure>
+              <blockquote class=" blockquote">
+                <p>“My green thumb came only as a result of the mistakes I made while learning to see things from the
+                  plant’s point of
+                  view.”</p>
+              </blockquote>
+              <figcaption class="blockquote-footer">
+                <cite title="Source Title" class="contrast-color">H. Fred Dale</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="intro col-md-4">
+          <img src="Images/models3.jpg" class="img-fluid" alt="plant display">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- plant collection section -->
+  <section class="p-5 text-center contrast-bg" id="ourCollection">
+    <div class="container">
+      <h1 class="text-light">Our Collection</h1>
+      <h4 class="my-3 text-light">Choose any category to view</h4>
+      <div class="mb-4">
+        <button class="btn btn-light me-2 mb-2 mb-md-0 plant-btn">Palm</button>
+        <button class="btn btn-light me-2 mb-2 mb-md-0 plant-btn">Hanging</button>
+        <button class="btn btn-light me-2 mb-2 mb-md-0 plant-btn">Aralia</button>
+        <button class="btn btn-light me-2 mb-2 mb-md-0 plant-btn">Ficus</button>
+        <button class="btn btn-light me-2 mb-2 mb-md-0 plant-btn">Flower</button>
+        <button class="btn btn-light me-2 mb-2 mb-md-0 plant-btn">Fern</button>
+        <button class="btn btn-light me-2 mb-2 mb-md-0 plant-btn">Bromeliad</button>
+      </div>
+      <div class="plantBoxHolder row g-4">
+        <!-- items from server goes here-->
+      </div>
+    </div>
   </section>
 
-  <!-- most liked section -->
-  <section class="most-liked">
-    <div class="most-liked-width">
-           <!-- begin -->
-      <div class="most-liked-card">
-        <img src="Images/work.jpg" alt="gardening tools">
-      </div>
-      <div class="most-liked-card">
-        <p>“My green thumb came only as a result of the mistakes I made while learning to see things from the plant’s point of
-        view.” — H. Fred Dale</p>
-      </div>
-      <div class="most-liked-card">
-        <img src="Images/front-succulent-display.jpg" alt="plant display">
+  <!-- footer -->
+  <footer class="p-3 text-center">
+    <div class="container">
+      <div class="d-md-flex align-items-center justify-content-between">
+        <div>
+          <a class="text-dark me-2" href="#"><i class="bi bi-facebook"></i></a>
+          <a class="text-dark me-2" href="#"><i class="bi bi-twitter"></i></a>
+          <a class="text-dark me-2" href="#"><i class="bi bi-linkedin"></i></a>
+          <a class="text-dark me-2" href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+        <p class="pt-3 pt-md-0">copyright &copy; 2022 Lee's Plant Shop</p>
       </div>
     </div>
-  </section>
-
-  <!-- Other plant selection section -->
-  <section class="other-plants">
-    <!-- intro -->
-    <div class="other-plants-intro">
-      <h2>Have a look at the <br> rest of our collection</h2>
-      <h5>Choose any category to view</h5>
-    </div>
-    <!-- buttons -->
-    <div class="other-plants-buttons">
-      <button class="btn plantBtn">Palm</button>
-      <button class="btn plantBtn">Hanging</button>
-      <button class="btn plantBtn">Aralia</button>
-      <button class="btn plantBtn">Ficus</button>
-      <button class="btn plantBtn">Flower</button>
-      <button class="btn plantBtn">Fern</button>
-      <button class="btn plantBtn">Bromeliad</button>
-    </div>
-    <!-- main container -->
-   <div class="most-liked-width container">
-   </div>
-  </section>
-  <!-- footer section -->
-  <section class="footer">
-    <div class="footer-width">
-      <h3>Connect with us</h3>
-      <div class="social">
-        <ul>
-          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-<!-- <script src= "./environment.js"></script> -->
-  <script type="module"  src="./index.js"></script>
+  </footer>
+  <!-- bootstrap js -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <!-- project js -->
+  <script src="index.js"></script>
 </body>
+
 </html>

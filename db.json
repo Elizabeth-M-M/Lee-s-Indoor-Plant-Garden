@@ -1,5 +1,6 @@
 {
-  "plantPics": [{
+  "plantPics": [
+    {
       "name": "Guzmania",
       "img": "https://bromelia.info/wp-content/uploads/2014/01/bromelia-Guzmania.jpg",
       "id": 1
@@ -145,27 +146,28 @@
       "id": 30
     }
   ],
-  "startSection": [{
+  "startSection": [
+    {
       "title": "“A Leafy Little Home”",
-      "text":"“Plants give us oxygen for the lungs and for the soul.” — Terri Guillemets",
+      "text": "“Plants give us oxygen for the lungs and for the soul.” — Terri Guillemets",
       "image": "./Images/medium-saturated-plant-display.jpg",
       "id": 1
     },
     {
-       "title": "“We Can Go from a Simple Look”",
-       "text":"“I thought I was pretty cool until I realized plants can eat the sun and poop out air.” — Jim Bugg",
+      "title": "“We Can Go from a Simple Look”",
+      "text": "“I thought I was pretty cool until I realized plants can eat the sun and poop out air.” — Jim Bugg",
       "image": "./Images/front-succulent-display.jpg",
       "id": 2
     },
     {
-       "title": "“To a Medium Look”",
-       "text":"“Plants want to grow; they are on your side as long as you are reasonably sensible.” — Anne Wareham",
+      "title": "“To a Medium Look”",
+      "text": "“Plants want to grow; they are on your side as long as you are reasonably sensible.” — Anne Wareham",
       "image": "./Images/monstera-display.jpg",
       "id": 3
     },
     {
-       "title": "“To Even a Jungle Look”",
-       "text":"“Plants are like people: they’re all different and a little bit strange.” — John Kehoe",
+      "title": "“To Even a Jungle Look”",
+      "text": "“Plants are like people: they’re all different and a little bit strange.” — John Kehoe",
       "image": "./Images/jungle-look.jpg",
       "id": 4
     }
@@ -173,15 +175,82 @@
   "orders": [
     {
       "name": "Ella",
-      "plantType":"Live",
+      "plantType": "Live",
       "height": 135,
       "delivery": "New York",
-      "telephoneNumber":25478903
+      "telephoneNumber": 25478903,
+      "id": 1
+    },
+    {
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "Utawala",
+      "telephoneNumber": "+2547891011",
+      "id": 2
+    },
+    {
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "Utawala",
+      "telephoneNumber": "+2547891011",
+      "id": 3
+    },
+    {
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "Utawala",
+      "telephoneNumber": "+2547891011",
+      "id": 4
+    },
+    {
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "Utawala",
+      "telephoneNumber": "+2547891011",
+      "id": 5
+    },
+    {
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "Utawala",
+      "telephoneNumber": "+2547891011",
+      "id": 6
+    },
+    {
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "Utawala",
+      "telephoneNumber": "+2547891011",
+      "id": 7
+    },
+    {
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "Utawala",
+      "telephoneNumber": "+2547891011",
+      "id": 8
+    },
+    {
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "Utawala",
+      "telephoneNumber": "+2547891011",
+      "id": 9
     }
   ],
-  "plants": [{
-    "robotName": "C8-09S100K",
-    "robotType": "Human Assistant",
-    "id": 9000
-  }]
+  "plants": [
+    {
+      "robotName": "C8-09S100K",
+      "robotType": "Human Assistant",
+      "id": 9000
+    }
+  ]
 }

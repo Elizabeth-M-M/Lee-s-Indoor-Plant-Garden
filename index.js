@@ -224,7 +224,8 @@ function collectDeliveryInfo(form){
       "delivery": delivery,
       "telephoneNumber":tel,
     }
-    // postData(data)
+    // console.log(data)
+    postData(data)
 }
 // Post is not working; To resolve
 function postData(data){
@@ -236,7 +237,7 @@ function postData(data){
     },
     body:JSON.stringify(data)
   }).then(response=>response.json())
-  .then(data=>console.log(data))
+  .then(resp=>console.log(resp))
 }
 let header = document.querySelector('.header-content-main h1');
   let headerP = document.querySelector('.header-content-main p');
