@@ -32,7 +32,7 @@ function useOnlyHalfOfplants(plants){
       plantsCollected.push(plant)
     }
   })
-  // For the retrieved plants (half), in th event a button of specific categories are clicked, it calls the displayPlantInCategory() passing the plants and specific category of button (property)
+  // For the retrieved plants (half), in the event a button of specific categories are clicked, it calls the displayPlantInCategory() passing the plants and specific category of button (property)
   plantBtns.forEach(btn=>
     {
       btn.addEventListener('click', (event)=>{
@@ -98,7 +98,7 @@ function displayPlantInCategory(plants, property){
             </div>
             <div class="mt-3">
               <a class="btn btn-success" id="backBtn" role="button">Back</a>
-              <button class="btn btn-success" type="submit" id="orderBtn">Order now</button>
+              <button class="btn btn-success" type="submit" id="orderBtn">Order Now</button>
             </div>
           </form>
         </div>
@@ -136,7 +136,7 @@ function respectiveImage(){
     })
   })
 }
-// Upon clicking a button category, different plants pile on top of each other on the DOM even if not belonging to the category. This function removes plants not of same category.
+// Upon clicking a button category, different plants pile on top of each other on the DOM even if not belonging to the category. This function removes plants not of the same category.
 function removePlantsOfNotSameCategory(property){
   let plantBoxes = document.querySelectorAll(".plantBox");
   plantBoxes.forEach(plantBox=>{
@@ -175,7 +175,7 @@ function moreDetails(btn){
     let modalMore=box.querySelector('.modalMore')
     let modalInterested=box.querySelector('.modalInterested')
     let modalOverlay=box.querySelector('#overlay');
-    // When more button is clicked, active class is added to modalMore and overlay to become visible
+    // When more button is clicked, active class is added to modalMore and modalOverlayto become visible
     modalMore.classList.add('active');
     modalOverlay.classList.add('active');
     // When interested button is clicked, active class is removed from modalMore to make it invisible and added to modalInterested to make it visible
@@ -237,3 +237,4 @@ function postData(data){
   .then(resp=>console.log(resp))
   .catch(err=>console.error(err))
 }
+// to solve, plant category buttons when clicked delay starting
