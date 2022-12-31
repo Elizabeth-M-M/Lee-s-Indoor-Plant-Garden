@@ -1,12 +1,12 @@
 
 // imported api key from environment.js
-import keyForUse from "./environment.js";
+// import keyForUse from "./environment.js";
 const plantBtns = document.querySelectorAll('.plant-btn');
 const container = document.querySelector('.plantBoxHolder')
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': keyForUse,
+		'X-RapidAPI-Key': "2343109cb7mshcd6f7f86e084a6ap1bc643jsn7cf4819a71d3",
 		'X-RapidAPI-Host': 'house-plants.p.rapidapi.com'
 	}
 };
@@ -27,6 +27,8 @@ function useOnlyHalfOfplants(plants){
   let plantsCollected = []
   let half =plants.length/2
   plants.forEach(plant=>{
+      console.log(plant)
+
     if(plant.id<=half){
       plantsCollected.push(plant)
     }
@@ -35,6 +37,7 @@ function useOnlyHalfOfplants(plants){
   plantBtns.forEach(btn=>
     {
       btn.addEventListener('click', (event)=>{
+        console.log('yes')
         let property = btn.innerHTML;
         displayPlantInCategory(plantsCollected, property);
       })
@@ -45,6 +48,7 @@ function displayPlantInCategory(plants, property){
   plants.forEach(plant=>{
     // When a button of a particular category is clicked, only plants belonging to that category are collected
     if(plant.category===property){
+      let insect = plant.insects.toString()
       let box= document.createElement('div');
       box.classList= `plantBox col-lg-3 col-md-4 col-sm-6 ${plant.category}`
       box.innerHTML=`
@@ -58,10 +62,12 @@ function displayPlantInCategory(plants, property){
         <div class="modals modalMore bg-light">
           <h4 class="text-center">Taking care of<span class="contrast-color"> ${plant.common[0]}</span></h4>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Watering: <span class="contrast-color">${plant.watering}</span></li>
-            <li class="list-group-item">Ideal light: <span class="contrast-color">${plant.ideallight}</span></li>
             <li class="list-group-item">Origin: <span class="contrast-color">${plant.origin}</span></li>
             <li class="list-group-item">Use: <span class="contrast-color">${plant.use[0]}</span></li>
+            <li class="list-group-item">Watering: <span class="contrast-color">${plant.watering}</span></li>
+            <li class="list-group-item">Ideal light: <span class="contrast-color">${plant.ideallight}</span></li>
+            <li class="list-group-item">Tolerated light: <span class="contrast-color">${plant.toleratedlight}</span></li>
+            <li class="list-group-item">Insects that affect them: <span class="contrast-color">${insect}</span></li>
           </ul>
           <button class="btn btn-success w-100" id="interestedBtn">Interested</button>
         </div>
