@@ -107,6 +107,12 @@ function displayPlantInCategory(plants, property){
             </div>
           </form>
         </div>
+        <div class="modals modalSuccess bg-light" id="modal">
+          <div class="modal-title">
+            <h3>Awesome</h3>
+            <p>We'll contact you as soon as possible.</p>
+          </div>
+        </div>
         <div id="overlay"></div>
       `
       container.appendChild(box);
@@ -217,7 +223,7 @@ function moreDetails(btn){
       collectOrderedPlantDetails(box);
     })
 }
-// remove prefilled inputs 
+// remove prefilled inputs
 function removeInputs(smalls, inputs){
   smalls.forEach(small=>{
         small.classList.remove('active');
