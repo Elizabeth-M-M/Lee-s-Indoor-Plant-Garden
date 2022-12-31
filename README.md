@@ -24,15 +24,17 @@ This project required a set up of a local server to store our plant images to di
 The `index.html` structure was built out and divided into five sections; header, intro, most liked, other plant section and a footer section.
 
 #### CSS
-Using `stye.css` and bootstrap, I built out the design of the page.
+Using `style.css` and bootstrap, I built out the design of the page.
 
 #### JavaScript
 Using `index.js`, I built out the functionality of the app.
 I also used `environment.js` to store the external API key.
 The API key was imported from environment.js to `index.js` and used to fetch (GET) plants from the external API.
+
 Since this API does not have images, I used half of the plants.
 For the retrieved plants (half), in the event a button of specific categories are clicked, it calls the `displayPlantInCategory()` passing the plants and specific category of button labelled as the `property` variable.
 In `displayPlantInCategory()`, when a button of a particular category is clicked, only plants belonging to that category are collected. The plants are then appended to the parent container and eventually displayed on the DOM.
+
 After displaying, four functions are called to solve four problems.
 - `removePlantsOfNotSameCategory(property)`
 Upon clicking a button category, different plants pile on top of each other on the DOM even if not belonging to the category. This function removes plants not of the same category.
@@ -45,15 +47,11 @@ One plant displayed undefined on the title `${plant.common[0]}` because there wa
 
 On the collection section containing the plants, it involves multiple events mostly involving buttons and clicks, modals appearing and dissapearing. There are two modals in this section, an overlay and multiple buttons. 
 
-When a user clicks the `More` button of a paricular plant, a modal becomes visible. `active` class is added to `modalMore` and `modalOverlay` to become visible.
-
-When `Interested` button is clicked, `active` class is removed from `modalMore` to make it invisible and added to `modalInterested` to make it visible.
-
-We want to hide all the modals and overlay when the overlay is clicked, hence `active` class is removed from `modalMore`, `modalInterested` and `modalOverlay`. We also want to hide all the modals and overlay when the x button is clicked, so we do the same action as the previous sentence.
-
-`Back` button is in the second modal, which when clicked goes back to the first modal, hence hide second modal (remove `active` class) and display first modal (add `active` class).
-
-In the event a user is interested in a plant, he/she can input the details and click `Order Now` to order. That data from the filled out form is then collected and stored in an object called `data`.
+- When a user clicks the `More` button of a paricular plant, a modal becomes visible. `active` class is added to `modalMore` and `modalOverlay` to become visible.
+- When `Interested` button is clicked, `active` class is removed from `modalMore` to make it invisible and added to `modalInterested` to make it visible.
+- We want to hide all the modals and overlay when the overlay is clicked, hence `active` class is removed from `modalMore`, `modalInterested` and `modalOverlay`. We also want to hide all the modals and overlay when the x button is clicked, so we do the same action as the previous sentence.
+- `Back` button is in the second modal, which when clicked goes back to the first modal, hence hide second modal (remove `active` class) and display first modal (add `active` class).
+- In the event a user is interested in a plant, he/she can input the details and click `Order Now` to order. That data from the filled out form is then collected and stored in an object called `data`.
 
 Using fetch POST request, we store the data to our internal server(db.json).
 
