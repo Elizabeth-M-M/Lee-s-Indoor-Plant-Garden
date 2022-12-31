@@ -1,13 +1,13 @@
 
 // imported api key from environment.js
-// import keyForUse from "./environment.js";
-// console.log(keyForUse)
+import keyForUse from "/js/environment.js";
+
 const plantBtns = document.querySelectorAll('.plant-btn');
 const container = document.querySelector('.plantBoxHolder')
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': "2343109cb7mshcd6f7f86e084a6ap1bc643jsn7cf4819a71d3",
+		'X-RapidAPI-Key': keyForUse,
 		'X-RapidAPI-Host': 'house-plants.p.rapidapi.com'
 	}
 };

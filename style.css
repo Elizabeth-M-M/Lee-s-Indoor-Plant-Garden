@@ -1,10 +1,12 @@
 /* general */
 .theme-color {
   background: linear-gradient(rgba(187, 187, 108, 0.9), rgba(204, 191, 116, 0.9)), url("./Images/palms.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .contrast-bg {
-  background-color: rgb(73, 139, 95);
+  background-color: rgb(92, 105, 19);
 }
 
 .contrast-color {
