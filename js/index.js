@@ -37,7 +37,6 @@ function useOnlyHalfOfplants(plants){
   plantBtns.forEach(btn=>
     {
       btn.addEventListener('click', (event)=>{
-        console.log('yes')
         let property = btn.innerHTML;
         displayPlantInCategory(plantsCollected, property);
       })
@@ -181,25 +180,31 @@ function moreDetails(btn){
     let modalMore=box.querySelector('.modalMore')
     let modalInterested=box.querySelector('.modalInterested')
     let modalOverlay=box.querySelector('#overlay');
+    let form = box.querySelector('form');
+    let smalls = form.querySelectorAll('small');
+    let inputs = form.querySelectorAll('.form-control');
+
     // When more button is clicked, active class is added to modalMore and modalOverlayto become visible
     modalMore.classList.add('active');
     modalOverlay.classList.add('active');
     // When interested button is clicked, active class is removed from modalMore to make it invisible and added to modalInterested to make it visible
     box.querySelector('#interestedBtn').addEventListener('click', ()=>{
       modalMore.classList.remove('active')
-      modalInterested.classList.add('active')
+      modalInterested.classList.add('active');
     })
     // We want to hide all the modals and overlay when the overlay is clicked
     modalOverlay.addEventListener('click', ()=>{
       modalOverlay.classList.remove('active');
       modalMore.classList.remove('active');
-      modalInterested.classList.remove('active')
+      modalInterested.classList.remove('active');
+      removeInputs(smalls, inputs);
     })
     // We also want to hide all the modals and overlay when the x button is clicked
     box.querySelector('#closeModal').addEventListener('click', ()=>{
       modalOverlay.classList.remove('active');
       modalMore.classList.remove('active');
-      modalInterested.classList.remove('active')
+      modalInterested.classList.remove('active');
+      removeInputs(smalls, inputs);
     })
     // back button is in the second modal, which when clicked goes back to the first modal, hence hide second modal and display first modal
     box.querySelector('#backBtn').addEventListener('click', ()=>{
@@ -211,6 +216,17 @@ function moreDetails(btn){
       event.preventDefault();
       collectOrderedPlantDetails(box);
     })
+}
+// remove prefilled inputs 
+function removeInputs(smalls, inputs){
+  smalls.forEach(small=>{
+        small.classList.remove('active');
+      })
+      inputs.forEach(input=>{
+        input.classList.remove('filled');
+        input.classList.remove('notFilled');
+        input.value='';
+      })
 }
 // On submission of form for plant order, data is collected.
 function collectOrderedPlantDetails(box){

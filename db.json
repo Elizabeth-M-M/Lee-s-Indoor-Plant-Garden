@@ -191,6 +191,24 @@
       "delivery": "islo",
       "telephoneNumber": "69856",
       "id": 5
+    },
+    {
+      "plant": "Golden Trumpet",
+      "name": "Lella Muthusi",
+      "plantType": "live",
+      "height": "124",
+      "delivery": "islo",
+      "telephoneNumber": "5478765",
+      "id": 6
+    },
+    {
+      "plant": "Golden Trumpet",
+      "name": "Lella Muthusi",
+      "plantType": "live",
+      "height": "124",
+      "delivery": "islo",
+      "telephoneNumber": "5478765",
+      "id": 7
     }
   ],
   "plants": [
