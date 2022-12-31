@@ -12,6 +12,7 @@ You need to run the db.json server to work with this app that works concurrently
 If a user selects a plant from a particular category by clicking `More`, a pop up of the plant details will pop up showing different requirements needed to grow the plant, fun facts about its origin. If the user is interested, he will click the button `Interested`.
 A pop up page again will then appear prompting the user to enter details pertaining to name, height of plant required, live or artificial, delivery location and telephone number. The user clicks on submit to submit the data.
 If the user is not interested, they can close the pop up and continue browsing.
+The main fetch requests (GET & POST) are in the `collection` section.
 
 ### Set up
 #### External API
@@ -51,7 +52,9 @@ On the collection section containing the plants, it involves multiple events mos
 - When `Interested` button is clicked, `active` class is removed from `modalMore` to make it invisible and added to `modalInterested` to make it visible.
 - We want to hide all the modals and overlay when the overlay is clicked, hence `active` class is removed from `modalMore`, `modalInterested` and `modalOverlay`. We also want to hide all the modals and overlay when the x button is clicked, so we do the same action as the previous sentence.
 - `Back` button is in the second modal, which when clicked goes back to the first modal, hence hide second modal (remove `active` class) and display first modal (add `active` class).
-- In the event a user is interested in a plant, he/she can input the details and click `Order Now` to order. That data from the filled out form is then collected and stored in an object called `data`.
+- In the event a user is interested in a plant, he/she can input the details and click `Order Now` to order. That data from the filled out form is then collected and function `verifyInputs(collected, form)` is called to verify no blank inputs only. Onced verification is done using `sum` variable, the data is then collected in variable `data` and assigned to their respective labels.
+
+We finally store the data to our internal server by fetch POST method and use it to contact the customer.
 
 Using fetch POST request, we store the data to our internal server(db.json).
 
