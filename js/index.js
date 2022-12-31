@@ -72,7 +72,7 @@ function displayPlantInCategory(plants, property){
         </div>
         <div class="modals modalInterested bg-light" id="modal">
           <div class="modal-title">
-            <h3><span class="contrast-color">${plant.common[0]}</span> is a great pick</h3>
+            <h3><span class="contrast-color plantName">${plant.common[0]}</span> is a great pick</h3>
             <button class="contrast-color ms-3" id="closeModal">&times;</button>
           </div>
           <form class="text-start">
@@ -84,22 +84,22 @@ function displayPlantInCategory(plants, property){
             <div>
               <label for="plant type" class="col-form-label">Which plant type do you need?</label><br>
               <input type="text" name="artificial/live" id="artificialOrLive" class="form-control" placeholder="Artificial/Live">
-              <small class="small mt-1 ms-2">Fill in a name</small>
+              <small class="small mt-1 ms-2">Fill in which type you want</small>
             </div>
             <div>
               <label for="height" class="col-form-label">Approximate height needed</label>
               <input type="text" name="height" id="height" class="form-control" placeholder="In cm">
-              <small class="small mt-1 ms-2">Fill in a name</small>
+              <small class="small mt-1 ms-2">Fill in a height</small>
             </div>
             <div>
               <label for="location" class="col-form-label">Location</label>
-              <input type="text" placeholder="Delivery location" class="form-control" id="delivery">
-              <small class="small mt-1 ms-2">Fill in a name</small>
+              <input type="text" class="form-control" id="delivery">
+              <small class="small mt-1 ms-2">Fill in a delivery location</small>
             </div>
             <div>
               <label for="contact" class="col-form-label">Telephone Number</label>
               <input type="tel" name="telephone" placeholder="+254..." class="form-control" id="telephone">
-              <small class="small mt-1 ms-2">Fill in a name</small>
+              <small class="small mt-1 ms-2">Fill in a telephone number</small>
             </div>
             <div class="mt-3">
               <a class="btn btn-success" id="backBtn" role="button">Back</a>
@@ -214,21 +214,78 @@ function moreDetails(btn){
 // On submission of form for plant order, data is collected and stored in an object called data
 function collectOrderedPlantDetails(box){
   let form = box.querySelector('form');
-  let plant=box.querySelector("#plantName").innerHTML;
-  let tel= form.querySelector('#telephone').value;
-  let delivery= form.querySelector('#delivery').value;
-  let height= form.querySelector('#height').value;
-  let fullname= form.querySelector('#fullname').value;
-  let plantType= form.querySelector('#artificialOrLive').value;
+
+  let tel= form.querySelector('#telephone');
+  let delivery= form.querySelector('#delivery');
+  let height= form.querySelector('#height');
+  let fullname= form.querySelector('#fullname');
+  let plantType= form.querySelector('#artificialOrLive');
+
+  let collected= [fullname, plantType, height, delivery, tel];
+  verifyInputs(collected, form);
+
+
+
+  // console.log(data)
+// postData(data)
+}
+
+function verifyInputs(items, form){
+let inputs=form.querySelectorAll('.form-control');
+let formParent = form.parentElement;
+let plant=formParent.querySelector(".plantName").innerHTML;
+console.log(plant)
+let sum=0
+items.forEach(item=>{
+displayVerified(item)
+
+})
+
+
+inputs.forEach(input=>{
+  // console.log(input.classList)
+  if(input.classList.contains('filled')){
+    sum+=1;
+  }
+})
+console.log(sum)
+if(sum===inputs.length){
+  // console.log(items[0].value)
   let data = {
     "plant":plant,
-    "name": fullname,
-    "plantType":plantType,
-    "height":height,
-    "delivery": delivery,
-    "telephoneNumber":tel,
+    "name": items[0].value,
+    "plantType":items[1].value,
+    "height":items[2].value,
+    "delivery": items[3].value,
+    "telephoneNumber":items[4].value,
   }
-postData(data)
+  postData(data);
+  // form.reset();
+  // console.log(data)
+}
+  // console.log(typeof tel.value)
+
+
+
+
+}
+function displayVerified(par){
+
+ let small;
+  // tel
+  if(par.value===""){
+    // console.log(tel.parentElement.parentElement)
+    small= par.nextElementSibling;
+    small.classList.add('active');
+    par.classList.add('notFilled')
+  }else{
+
+    small= par.nextElementSibling;
+    small.classList.remove('active');
+    par.classList.remove('notFilled')
+    par.classList.add('filled')
+
+  }
 }
 // We store the data to our internal server by fetch POST method
 function postData(data){

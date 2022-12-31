@@ -182,6 +182,15 @@
       "delivery": "islo",
       "telephoneNumber": "+2547891011",
       "id": 4
+    },
+    {
+      "plant": "Fish tail palm",
+      "name": "Elizabeth Muthusi",
+      "plantType": "LIve",
+      "height": "124",
+      "delivery": "islo",
+      "telephoneNumber": "69856",
+      "id": 5
     }
   ],
   "plants": [
