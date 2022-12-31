@@ -44,13 +44,7 @@
   box-shadow: none;
   width: 40%;
   height: 90%;
-
 }
-
-.content-overlay2 img {
-  /* border-radius: 0; */
-}
-
 /* intro section */
 .intro {
   height: 50vh;
@@ -128,7 +122,20 @@
   opacity: 1;
   pointer-events: all;
 }
-
+/* form modal */
+.small{
+  color: red;
+  display: none;
+}
+.small.active{
+  display: block;
+}
+.filled{
+  border: 2px solid green;
+}
+.notFilled {
+  border: 2px solid red;
+}
 /* screen less than 768px */
 @media(max-width:768px) {
   .modals {
