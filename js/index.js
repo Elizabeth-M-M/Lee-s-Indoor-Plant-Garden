@@ -11,6 +11,7 @@ const options = {
 		'X-RapidAPI-Host': 'house-plants.p.rapidapi.com'
 	}
 };
+// When the DOM loads, the fetch (GET) request is done
 document.addEventListener('DOMContentLoaded', ()=>{
   retrievePlants();
 })
@@ -211,80 +212,59 @@ function moreDetails(btn){
       collectOrderedPlantDetails(box);
     })
 }
-// On submission of form for plant order, data is collected and stored in an object called data
+// On submission of form for plant order, data is collected.
 function collectOrderedPlantDetails(box){
   let form = box.querySelector('form');
-
   let tel= form.querySelector('#telephone');
   let delivery= form.querySelector('#delivery');
   let height= form.querySelector('#height');
   let fullname= form.querySelector('#fullname');
   let plantType= form.querySelector('#artificialOrLive');
-
   let collected= [fullname, plantType, height, delivery, tel];
   verifyInputs(collected, form);
-
-
-
-  // console.log(data)
-// postData(data)
 }
-
+// The collected data is verified only for a blank input
 function verifyInputs(items, form){
-let inputs=form.querySelectorAll('.form-control');
-let formParent = form.parentElement;
-let plant=formParent.querySelector(".plantName").innerHTML;
-console.log(plant)
-let sum=0
-items.forEach(item=>{
-displayVerified(item)
-
-})
-
-
-inputs.forEach(input=>{
-  // console.log(input.classList)
-  if(input.classList.contains('filled')){
-    sum+=1;
+  let inputs=form.querySelectorAll('.form-control');
+  let formParent = form.parentElement;
+  let plant=formParent.querySelector(".plantName").innerHTML;
+  let sum=0
+  // Look through each input to verify it's not ""
+  items.forEach(item=>{
+  displayVerified(item)
+  })
+  // if input is filled, a class of filled is added to the inputs classlist. The sum adds up how many inputs are filled
+  inputs.forEach(input=>{
+    if(input.classList.contains('filled')){
+      sum+=1;
+    }
+  })
+  // When the sum equals the inputs length, the data is then collected in variable data and assigned to their respective labels
+  if(sum===inputs.length){
+    let data = {
+      "plant":plant,
+      "name": items[0].value,
+      "plantType":items[1].value,
+      "height":items[2].value,
+      "delivery": items[3].value,
+      "telephoneNumber":items[4].value,
+    }
+    // We store the data to our internal server by fetch POST method
+    postData(data);
   }
-})
-console.log(sum)
-if(sum===inputs.length){
-  // console.log(items[0].value)
-  let data = {
-    "plant":plant,
-    "name": items[0].value,
-    "plantType":items[1].value,
-    "height":items[2].value,
-    "delivery": items[3].value,
-    "telephoneNumber":items[4].value,
-  }
-  postData(data);
-  // form.reset();
-  // console.log(data)
 }
-  // console.log(typeof tel.value)
-
-
-
-
-}
+// called in function verifyInputs() to look through each input to verify it's not "". par parameter represents item (input) argument
 function displayVerified(par){
-
  let small;
-  // tel
   if(par.value===""){
-    // console.log(tel.parentElement.parentElement)
     small= par.nextElementSibling;
     small.classList.add('active');
-    par.classList.add('notFilled')
+    par.classList.add('notFilled');
   }else{
-
     small= par.nextElementSibling;
     small.classList.remove('active');
-    par.classList.remove('notFilled')
-    par.classList.add('filled')
-
+    par.classList.remove('notFilled');
+    par.classList.add('filled');
   }
 }
 // We store the data to our internal server by fetch POST method
