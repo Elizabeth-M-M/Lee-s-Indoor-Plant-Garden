@@ -76,25 +76,30 @@ function displayPlantInCategory(plants, property){
             <button class="contrast-color ms-3" id="closeModal">&times;</button>
           </div>
           <form class="text-start">
-            <div >
+            <div>
               <label for="name" class="col-form-label">Name</label>
               <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Your name here">
+              <small class="small mt-1 ms-2">Fill in a name</small>
             </div>
             <div>
               <label for="plant type" class="col-form-label">Which plant type do you need?</label><br>
               <input type="text" name="artificial/live" id="artificialOrLive" class="form-control" placeholder="Artificial/Live">
+              <small class="small mt-1 ms-2">Fill in a name</small>
             </div>
             <div>
               <label for="height" class="col-form-label">Approximate height needed</label>
               <input type="text" name="height" id="height" class="form-control" placeholder="In cm">
+              <small class="small mt-1 ms-2">Fill in a name</small>
             </div>
-            <div >
+            <div>
               <label for="location" class="col-form-label">Location</label>
               <input type="text" placeholder="Delivery location" class="form-control" id="delivery">
+              <small class="small mt-1 ms-2">Fill in a name</small>
             </div>
-            <div >
+            <div>
               <label for="contact" class="col-form-label">Telephone Number</label>
               <input type="tel" name="telephone" placeholder="+254..." class="form-control" id="telephone">
+              <small class="small mt-1 ms-2">Fill in a name</small>
             </div>
             <div class="mt-3">
               <a class="btn btn-success" id="backBtn" role="button">Back</a>
