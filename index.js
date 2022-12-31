@@ -1,6 +1,7 @@
 
 // imported api key from environment.js
 // import keyForUse from "./environment.js";
+// console.log(keyForUse)
 const plantBtns = document.querySelectorAll('.plant-btn');
 const container = document.querySelector('.plantBoxHolder')
 const options = {
@@ -27,8 +28,6 @@ function useOnlyHalfOfplants(plants){
   let plantsCollected = []
   let half =plants.length/2
   plants.forEach(plant=>{
-      console.log(plant)
-
     if(plant.id<=half){
       plantsCollected.push(plant)
     }
