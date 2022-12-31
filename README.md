@@ -54,7 +54,5 @@ On the collection section containing the plants, it involves multiple events mos
 - `Back` button is in the second modal, which when clicked goes back to the first modal, hence hide second modal (remove `active` class) and display first modal (add `active` class).
 - In the event a user is interested in a plant, he/she can input the details and click `Order Now` to order. That data from the filled out form is then collected and function `verifyInputs(collected, form)` is called to verify no blank inputs only. Onced verification is done using `sum` variable, the data is then collected in variable `data` and assigned to their respective labels.
 
-We finally store the data to our internal server by fetch POST method and use it to contact the customer.
-
-Using fetch POST request, we store the data to our internal server(db.json).
+We finally store the data to our internal server (db.json) by fetch POST method and use it to contact the customer.
 
